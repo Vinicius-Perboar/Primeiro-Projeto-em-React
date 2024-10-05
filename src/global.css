@@ -14,10 +14,10 @@
     --red-500: #F75A68;
 }
 
-    :focus{
+:focus{
         outline: transparent;
         box-shadow: 0 0 0 2px var(--green-500); /*Sombra sólida da cor verde*/
-    }
+}
 
 *{
     margin: 0;

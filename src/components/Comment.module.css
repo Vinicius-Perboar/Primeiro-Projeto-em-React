@@ -4,13 +4,6 @@
     gap: 1rem;
 }
 
-.comment img{
-        box-sizing: initial; /*Configura para que elementos que fiquem nas bordas, fiquem fora do container e não espremam o conteúdo*/
-        width: 3rem;
-        height: 3rem;
-        border-radius: 8px;
-}
-
 .commentBox{
     flex: 1; /*Se possui uma div em volta dela que é display flex, esse comando faz com que essa div estique o máximo que conseguir*/
 }

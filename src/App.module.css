@@ -6,6 +6,18 @@
     display: grid;
     grid-template-columns: 256px 1fr;
     gap: 2rem; /* Espaço entre as colunas */
-    align-items: flex-start; /* ALinhar os componentes para eles sempre ficarem alinhados ao topo */
+    align-items: flex-start; /* ALinhar os componentes para eles sempre ficarem alinhados ao topo */   
+}
+
+
+
+@media (max-width: 768px) { /*Se a largura da tela for menor ou igual a 768 píxels, largura comum de um aparelho mobile, irão ocorrer mudanças na estilização, que atendem melhor a responsividade*/
     
+    html{ /*A fonte irá diminuir, e tudo que está em rem acompanhará proporcionalmente*/
+        font-size: 87.5%;
+    }
+
+    .wrapper{ /*A página passará a ter uma coluna só*/
+        grid-template-columns: 1fr;
+    }
 }
