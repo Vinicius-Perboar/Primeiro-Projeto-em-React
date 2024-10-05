@@ -1,0 +1,11 @@
+.wrapper{
+    max-width: 70rem; /* De acordo com a largura da página */
+    margin: 2rem auto; /* Pra ficar sentralizado */
+    padding: 0 1rem; /* Página ficar responsiva nas laterais */
+
+    display: grid;
+    grid-template-columns: 256px 1fr;
+    gap: 2rem; /* Espaço entre as colunas */
+    align-items: flex-start; /* ALinhar os componentes para eles sempre ficarem alinhados ao topo */
+    
+}

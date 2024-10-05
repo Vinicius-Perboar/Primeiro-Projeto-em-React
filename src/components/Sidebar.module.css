@@ -1,0 +1,72 @@
+.sidebar{
+    background: var(--gray-800);
+    border-radius: 8px;
+    overflow: hidden; /*Esconde qualquer elemento que ultrapasse a área da sidebar*/
+}
+
+.cover{
+    width: 100%;
+    height: 72px;
+    object-fit: cover; /*Corta a imagem para se adequar ao tamanho, ao invés de redimensioná-la*/
+}
+
+.profile{
+  display: flex;
+  flex-direction: column; 
+  align-items: center; /* Alinha os itens do container na vertical, de cima para baixo */
+
+  margin-top: -30px;
+
+}
+
+.avatar{
+    box-sizing: initial; /*Configura para que elementos que fiquem nas bordas, fiquem fora do container e não espremam o conteúdo*/
+    width: 3rem;
+    height: 3rem;
+    border: 4px solid var(--gray-800);
+    outline: 2px solid var(--green-500);
+    border-radius: 8px;
+}
+
+.profile strong{
+    margin-top: 1rem;
+    color: var(--gray-100);
+    line-height: 1.6;
+}
+
+.profile span{
+    font-size: 0.875rem;
+    color: var(--gray-400);
+    line-height: 1.6;
+}
+
+.sidebar footer{
+    border-top: 1px solid var(--gray-600);
+    margin-top: 1.5rem;
+    padding: 1.5rem 2rem 2rem;    
+}
+
+.sidebar footer a{
+    display: block; /*Faz com que o elemento ocupe toda largura disponível do container*/
+    background: transparent;
+    color: var(--green-500);
+    border: solid 2px var(--green-500);
+    border-radius: 8px;
+    padding: 0 1.5rem;
+    height: 50px;
+    font-weight: bold;
+    text-decoration: none;
+
+    display: flex;
+    justify-content: center; /*Alinhamento no eixo horizontal*/
+    align-items: center; /*Alinhamento no eixo vertical*/
+
+    gap: 0.35rem;
+
+    transition: color 0.2s, background-color 0.2s; /*Transição para o hover*/
+}
+
+.sidebar footer a:hover{ /*Muda a cor quando o cursor do mouse passa por cima dele*/
+    background: var(--green-500);
+    color: var(--white);
+}

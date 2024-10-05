@@ -1,0 +1,94 @@
+.comment{
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.comment img{
+        box-sizing: initial; /*Configura para que elementos que fiquem nas bordas, fiquem fora do container e não espremam o conteúdo*/
+        width: 3rem;
+        height: 3rem;
+        border-radius: 8px;
+}
+
+.commentBox{
+    flex: 1; /*Se possui uma div em volta dela que é display flex, esse comando faz com que essa div estique o máximo que conseguir*/
+}
+
+.commentContent{
+    background: var(--gray-700);
+    border-radius: 9px;
+    padding: 1rem;
+}
+
+.commentContent header{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.author strong{
+    display: block;
+    color: var(--gray-100);
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.author time{
+    display: block;
+    color: var(--gray-400);
+    font-size: 0.75rem;
+    line-height: 1.6;
+}
+
+.commentContent header button{
+    background: transparent;
+    border: 0;
+    color: var(--gray-400);
+    cursor: pointer;
+    border-radius: 2px;
+
+    line-height: 0; /*Ajustar focus para o tamanho do item*/
+    transition: color 0.2s;
+}
+
+.commentContent header button:hover{
+    color: var(--red-500);
+}
+
+.commentContent p{
+    margin-top: 1rem;
+    color: var(--gray-300);
+}
+
+.commentBox footer{
+    margin-top: 1rem;
+}
+
+.commentBox footer button{
+    display: flex;
+    align-items: center;
+
+    background: transparent;
+    border: 0;
+    font-weight: bold;
+    color: var(--gray-400);
+    cursor: pointer;
+    border-radius: 2px;
+
+    transition: color 0.2s;
+    
+}
+
+.commentBox footer button:hover{
+    color: var(--green-300);
+}
+
+.commentBox footer button svg{
+    margin-right: 0.5rem;
+}
+
+.commentBox footer span::before{ /*Técnica para criar um elemento dentro do span, posicionando ele antes do span*/
+    content: '\2022'; /*Código do elemento, que corresponde a um ponto*/
+    padding: 0 0.25rem;
+}

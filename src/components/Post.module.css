@@ -1,0 +1,125 @@
+.post{
+    background: var(--gray-800);
+    border-radius: 8px;
+    padding: 2.5rem;
+}
+
+.post + .post{ /*Só aplica a estilização no post, se tiver um post antes dele*/
+    margin-top: 2rem;
+}
+
+.content{
+    line-height: 1.6;
+    color: var(--gray-300);
+    margin-top: 1.5rem;
+}
+
+.content p{
+    margin-top: 1rem;
+}
+
+.content a{
+    font-weight: bold;
+    color: var(--green-500);
+    text-decoration: none;
+}
+
+.content a:hover{
+    color: var(--green-300);
+}
+
+.headerFirstLevel{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /*Distribui o container flex fe forma que o primeiro e o último item estejam nas extremidades*/
+}
+
+.headerFirstLevel time{
+    font-size: 0.875rem;
+    color: var(--gray-400);
+}
+
+.author{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.authorInfo strong{
+    display: block;
+    color: var(--gray-100);
+    line-height: 1.6;
+}
+
+.authorInfo span{
+    display: block;
+    font-size: 0.875rem;
+    color: var(--gray-400);
+    line-height: 1.6;
+}
+
+.avatar{
+    box-sizing: initial; /*Configura para que elementos que fiquem nas bordas, fiquem fora do container e não espremam o conteúdo*/
+    width: 3rem;
+    height: 3rem;
+    border: 4px solid var(--gray-800);
+    outline: 2px solid var(--green-500);
+    border-radius: 8px;
+}
+
+.comment{
+    width: 100%;
+    border-top: 1px solid var(--gray-600);
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.comment > strong{
+    line-height: 1.6;
+    color: var(--gray-100);
+
+}
+
+.comment textarea{
+    width: 100%;
+    background: var(--gray-900);
+    border: 0;
+    resize: none;
+    height: 6rem;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    line-height: 1.4;
+    color: var(--gray-100);
+}   
+
+.comment button[type=submit]{
+    padding: 1rem 1.5rem;
+    font-weight: bold;
+    background: var(--green-500);
+    border-radius: 8px;
+    color: var(--white);
+    border: 0;
+    margin-top: 1rem;
+    cursor:pointer;
+
+    transition: background-color 0.1s;
+}
+
+.comment button[type=submit]:hover{
+    background-color: var(--green-300);
+}
+
+.comment footer{
+    visibility: hidden; /*Esconde o footer, que possui um botão dentro*/
+    max-height: 0; /*Não deixa o footer ocupar seu espaço, mesmo invisível*/
+}
+
+.comment:focus-within footer{ /*Permite modificar outro elemento se focar um elemento diferente*/
+    visibility: visible; /*Mostra o componente*/
+    max-height: none; /*Retira o limite 0 de altura quando ele está escondido, e volta para o padrão do CSS*/
+}
+
+.commentList{
+    margin-top: 2rem;
+}
