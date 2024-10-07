@@ -60,6 +60,7 @@ export function App() {
           {posts.map(post => { //Ao invés de colocar um componente post para cada post, agora será feito iterando
             return (
               <Post 
+                key = {post.id}
                 author={post.author}
                 content={post.content}
                 publishedAt={post.publishedAt} 
