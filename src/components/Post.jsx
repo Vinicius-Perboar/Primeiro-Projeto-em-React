@@ -9,9 +9,7 @@ import { useState } from 'react'; //Iniciando conceito de estados
     
 export function Post({author, content, publishedAt}){
 
-    const [comments, setComments] = useState([ //Criando o primeiro estado, se trata da variável comentários, que precisa inserir um a cada vez que clicar no botão publicar
-        'Post muito bacana, hein!' //Iniciando com um comentário
-    ])
+    const [comments, setComments] = useState([]) //Criando o primeiro estado, se trata da variável comentários, que precisa inserir um a cada vez que clicar no botão publicar
 
     const [newCommentText, setNewCommentText] = useState('')
     
@@ -25,15 +23,29 @@ export function Post({author, content, publishedAt}){
     }) //Criando uma constante que calcula a quanto tempo a publicação foi feita
 
     function handleCreateNewComent(){ //Função será acionada quando o botão submit "publicar" for acionado
-        event.preventDefault() 
+        event.preventDefault() //Impede que o botão submit faça sua ação padrão, de passar para outra tela
         setComments([ ...comments, newCommentText]); //Sempre que a função for acionada, ela irá pegar o array antigo de comentários e adicionar mais um
         setNewCommentText('');
     }
 
     function handleNewCommentChange(){
         setNewCommentText(event.target.value);
+        // event.target.setCustomValidity(''); - 2º FORMA DE VALIDAÇÃO DE FORMULÁRIO
     }
 
+    // function handleNewCommentInvalid(){
+    //     event.target.setCustomValidity('Esse campo é obrigatório!');
+    // } - 2º FORMA DE VALIDAÇÃO DE FORMULÁRIO
+
+    function deleteComment(commentToDelete){
+        const commentsWithoutDeletedOne = comments.filter(comment => {
+            return comment != commentToDelete}
+        )
+        setComments(commentsWithoutDeletedOne);
+    }
+
+    const isNewCommentEmpty = newCommentText.length == 0;
+ 
     return(
         <article className={styles.post}>
             <header className={styles.headerFirstLevel}> 
@@ -65,18 +77,20 @@ export function Post({author, content, publishedAt}){
                     placeholder='Deixe um comentário'
                     onChange={handleNewCommentChange}
                     value={newCommentText}
+                    //onInvalid={handleNewCommentInvalid} - 2º FORMA DE VALIDAÇÃO DE FORMULÁRIO
+                    //required - 1º FORMA DE VALIDAÇÃO DE FORMULÁRIO
                 />
 
                 <footer>
-                    <button type='submit'>Publicar</button>
+                    <button type='submit' disabled={isNewCommentEmpty}>Publicar</button>
                 </footer> 
 
             </form>
 
             <div className={styles.commentList}>
-                { comments.map(comment => { //Iterando os comentários assim como foram iterados os posts
+                {comments.map(comment => { //Iterando os comentários assim como foram iterados os posts
                     return( 
-                        <Comment key={comment} content={comment}/>
+                        <Comment key={comment} content={comment} onDeleteComment={deleteComment}/>
                     )
                 })}
             </div>
